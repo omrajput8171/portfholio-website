@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic Portfolio</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000; /* Black background */
+            color: white; /* White text for contrast */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+        header {
+        margin-top: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 9%;
+        background-color: transparent;
+        filter: drop-shadow(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+    }
+
+    .logo {
+        font-size: 2rem;
+        color: #b74b4b;
+        font-weight: 200;
+        cursor: pointer;
+        transition: 0.5s ease;
+    }
+
+    .logo:hover {
+        transform: scale(1.1);
+    }
+
+    nav a {
+        font-size: 1.0rem;
+        color: white;
+        margin: 0 3rem;
+        font-weight: 500;
+        transition: 0.3s ease;
+        border-bottom: 3px solid transparent;
+    }
+
+    nav a:hover,
+    nav a.active {
+        color: #b74b4b;
+        border-bottom: 3px solid #b74b4b;
+    }
+
+    @media(max-width:200px) {
+        nav {
+            position: right ;
+            display: none;
+            top: 0;
+            right: 30;
+            width: 40%;
+            border-left: 0px solid #b74b4b;
+            border-bottom: 3px solid #b74b4b;
+            border-bottom-left-radius: 2rem;
+            padding: 0rem solid;
+            background-color: #161616;
+            border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        }
+
+        nav.active {
+            display: block;
+        }
+
+        nav a {
+            display: block;
+            font-size: 2rem;
+            margin: 3rem 0;
+        }
+
+        nav a:hover,
+        nav a.active {
+            padding: 0rem;
+            border-radius: 0.5rem;
+            border-bottom: 0.5rem solid #b74b4b;
+        }
+    }
+        /* Cinematic Effect */
+        .cinematic-container {
+            position: relative;
+            width: 80%;
+            max-width: 1000px;
+            padding: 50px;
+            background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(255, 0, 0, 0.6)); /* Red gradient for cinematic feel */
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+            text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.7);
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Text Style */
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        /* Education Section */
+        .education-boxes {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .education-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            width: 30%;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+            opacity: 0;
+            animation: boxFadeIn 2s ease-out forwards; /* Ensures the fade-in happens only once */
+        }
+
+        .education-box:nth-child(1) {
+            animation-delay: 1s;
+        }
+
+        .education-box:nth-child(2) {
+            animation-delay: 1.5s;
+        }
+
+        .education-box:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        .education-box h3 {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .education-box p {
+            color: #ddd;
+        }
+
+        /* Animation for fade in */
+        @keyframes fadeIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes boxFadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Fade-in effect for background */
+        .cinematic-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://source.unsplash.com/1600x900/?cinema') no-repeat center center/cover;
+            filter: blur(10px);
+            opacity: 0.6;
+            z-index: -1;
+            animation: fadeBackground 4s ease-in-out forwards;
+        }
+
+        @keyframes fadeBackground {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0.6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">portfolio</a>
+
+        <nav>
+            <a href="port.html" class="active"> Home</a>
+            <a href="education.html">education</a>
+            <a href="contact.html">contact</a>
+            <a href="about.html">about</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <div class="cinematic-container">
+        <h1>Skills </h1>
+
+        <!-- Education Section -->
+        <div class="education-boxes">
+            <!-- Education Box 1: 10+2 -->
+            <div class="education-box">
+                <h3> Front-end  (</h3>
+                <p><strong>"I specialize in creating responsive and dynamic web interfaces using HTML, CSS, and JavaScript, ensuring seamless user experiences across devices."</strong> </p>
+               
+              
+            </div>
+
+            <!-- Education Box 2: Bachelor of Computer Applications -->
+            <div class="education-box">
+                <h3>Back-end</h3>
+                <p><strong>Institution:</strong> [vahatma jyotiba phule rohilkhand university]</p>
+                <p><strong>Year of Completion:</strong> [2024]</p>
+                <p><strong>Field of Study:</strong> Computer Applications</p>
+               
+            </div>
+
+            <!-- Education Box 3: Master of Computer Applications -->
+            <div class="education-box">
+                <h3>Data base </h3>
+                <p><strong>Institution:</strong> [Invertis university]</p>
+                <p><strong>Year of Completion:</strong> [Year]</p>
+                <p><strong>Field of Study:</strong> Computer Applications</p>
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

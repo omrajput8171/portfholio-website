@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic Portfolio</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000; /* Black background */
+            color: white; /* White text for contrast */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+        header {
+        margin-top: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 9%;
+        background-color: transparent;
+        filter: drop-shadow(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+    }
+
+    .logo {
+        font-size: 2rem;
+        color: #b74b4b;
+        font-weight: 200;
+        cursor: pointer;
+        transition: 0.5s ease;
+    }
+
+    .logo:hover {
+        transform: scale(1.1);
+    }
+
+    nav a {
+        font-size: 1.0rem;
+        color: white;
+        margin: 0 3rem;
+        font-weight: 500;
+        transition: 0.3s ease;
+        border-bottom: 3px solid transparent;
+    }
+
+    nav a:hover,
+    nav a.active {
+        color: #b74b4b;
+        border-bottom: 3px solid #b74b4b;
+    }
+
+    @media(max-width:200px) {
+        nav {
+            position: right ;
+            display: none;
+            top: 0;
+            right: 30;
+            width: 40%;
+            border-left: 0px solid #b74b4b;
+            border-bottom: 3px solid #b74b4b;
+            border-bottom-left-radius: 2rem;
+            padding: 0rem solid;
+            background-color: #161616;
+            border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        }
+
+        nav.active {
+            display: block;
+        }
+
+        nav a {
+            display: block;
+            font-size: 2rem;
+            margin: 3rem 0;
+        }
+
+        nav a:hover,
+        nav a.active {
+            padding: 0rem;
+            border-radius: 0.5rem;
+            border-bottom: 0.5rem solid #b74b4b;
+        }
+    }
+
+        /* Cinematic Effect */
+        .cinematic-container {
+            position: relative;
+            width: 60%;
+            max-width: 800px;
+            padding: 40px;
+            background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(255, 0, 0, 0.6)); /* Red gradient for cinematic feel */
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+            text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.7);
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Heading Style */
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        /* About Section */
+        .about-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+            animation: boxFadeIn 2s ease-out forwards; /* Animation for fade-in */
+            opacity: 0;
+            margin-top: 40px;
+        }
+
+        .about-box h3 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .about-box p {
+            color: #ddd;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .about-box ul {
+            color: #ddd;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .about-box ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Animation for fade in */
+        @keyframes fadeIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes boxFadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Fade-in effect for background */
+        .cinematic-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
+            filter: blur(10px);
+            opacity: 0.6;
+            z-index: -1;
+            animation: fadeBackground 4s ease-in-out forwards;
+        }
+
+        @keyframes fadeBackground {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0.6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">portfolio</a>
+
+        <nav>
+            <a href="port.html" > Home</a>
+            <a href="file:///C:/Users/STUDENT/Desktop/portfholio/skills.html">Skills</a>
+            <a href="education.html">Education</a>
+            <a href="#">Contact</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+    <div class="cinematic-container">
+        <h1>About My self </h1>
+
+        <!-- About Section -->
+        <div class="about-box">
+            <h3>Full Stack Developer</h3>
+            <p>Hello! I'm Rajput, a passionate and highly skilled Full Stack Developer with a strong foundation in computer science. I hold a BCA (Bachelor of Computer Applications) and MCA (Master of Computer Applications) degree, which have equipped me with a solid technical background to tackle complex development challenges. My expertise spans both front-end and back-end development, enabling me to create complete web applications from scratch.</p>
+
+           
+        </div>
+    </div>
+
+</body>
+</html>
